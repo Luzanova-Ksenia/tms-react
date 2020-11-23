@@ -1,3 +1,4 @@
+// ES5
 function Builder() {
   }
   
@@ -5,11 +6,11 @@ Builder.prototype.get = function() {
   console.log(this)
 }
 
-function InBuilder(inteee) {
+function IntBuilder(inteee) {
   Builder.call(this)
   this.arr = 0
   if (Number.isInteger(inteee) === true){
-		if (InBuilder.border<inteee){
+		if (IntBuilder.border<inteee){
 			console.log("Вы вышли за диапазон значений")
 		}
 		else {
@@ -23,15 +24,15 @@ function InBuilder(inteee) {
 }
 
 
-InBuilder.random = function(a,b) {
-  InBuilder.border = (Math.random() * b) + a
-  return InBuilder.border;
+IntBuilder.random = function(a,b) {
+  IntBuilder.border = (Math.random() * b) + a
+  return IntBuilder.border;
 }
 
-InBuilder.prototype = Object.create(Builder.prototype)
-InBuilder.prototype.constructor = InBuilder
+IntBuilder.prototype = Object.create(Builder.prototype)
+IntBuilder.prototype.constructor = IntBuilder
 
-InBuilder.prototype.plus = function(a) {
+IntBuilder.prototype.plus = function(a) {
   var sum = this.arr
   for (var i = 0; i < arguments.length; i++){
 	sum += arguments[i]
@@ -40,7 +41,7 @@ InBuilder.prototype.plus = function(a) {
   return this
   }
 
-InBuilder.prototype.minus = function(a) {
+IntBuilder.prototype.minus = function(a) {
   var min = this.arr
   for (var i = 0; i < arguments.length; i++){
 	min -= arguments[i]
@@ -49,31 +50,30 @@ InBuilder.prototype.minus = function(a) {
   return this
   }
 
-InBuilder.prototype.multiply = function(a) {
+IntBuilder.prototype.multiply = function(a) {
   const mul = this.arr * a
   this.arr = mul
   return this
 }
 
-InBuilder.prototype.divide = function(a) {
+IntBuilder.prototype.divide = function(a) {
   const dev = this.arr / a
   this.arr = dev
   return this
 }
 
-InBuilder.prototype.mod = function(a) {
+IntBuilder.prototype.mod = function(a) {
   const mo = this.arr % a
   this.arr = mo
   return this
 }
 
-InBuilder.prototype.get = function() {
+IntBuilder.prototype.get = function() {
   Builder.prototype.get.call(this.arr)
 }
 
 
-
-
+// ES6
 class strBuilder extends Builder {
   constructor(str) {
 	super()
