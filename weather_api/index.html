@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="weather_box">
+            <input type="text" id="city_input" placeholder="Enter your city here" required class="city_row">
+            <input type="text" id="country_input" placeholder="Enter your country here" required class="country_row">
+            <button id="submit" class="weather_button" onclick="weather()">Submit</button>
+        </div>
+        <div class="table_weather">
+            <table>
+                <thead>
+                    <tr>
+                        <td id="city"></td>
+                        <td id="temp"></td>
+                        <td id="real_temp"></td>
+                    </tr>
+                    <tr>
+                        <td id="speed"></td>
+                        <td id="d_speed"></td>
+                        <td id="pressure"></td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
